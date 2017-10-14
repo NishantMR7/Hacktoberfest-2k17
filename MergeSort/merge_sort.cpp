@@ -1,8 +1,6 @@
 #include <iostream>
- 
 using namespace std;
- 
-// A function to merge the two half into a sorted data.
+ // A function to merge the two half into a sorted data.
 void Merge(int *a, int low, int high, int mid)
 {
 	// We have low to mid and mid+1 to high already sorted.
@@ -35,24 +33,20 @@ void Merge(int *a, int low, int high, int mid)
 		k++;
 		i++;
 	}
- 
-	// Insert all the remaining values from j to high into temp[].
+ // Insert all the remaining values from j to high into temp[].
 	while (j <= high)
 	{
 		temp[k] = a[j];
 		k++;
 		j++;
 	}
- 
- 
-	// Assign sorted data stored in temp[] to a[].
+ // Assign sorted data stored in temp[] to a[].
 	for (i = low; i <= high; i++)
 	{
-		a[i] = temp[i-low];
+     a[i] = temp[i-low];
 	}
 }
- 
-// A function to split array into two parts.
+ // A function to split array into two parts.
 void MergeSort(int *a, int low, int high)
 {
 	int mid;
@@ -67,26 +61,21 @@ void MergeSort(int *a, int low, int high)
 		Merge(a, low, high, mid);
 	}
 }
- 
 int main()
 {
 	int n, i;
 	cout<<"\nEnter the number of data element to be sorted: ";
 	cin>>n;
- 
-	int arr[n];
+        int arr[n];
 	for(i = 0; i < n; i++)
 	{
 		cout<<"Enter element "<<i+1<<": ";
 		cin>>arr[i];
 	}
- 
-	MergeSort(arr, 0, n-1);
- 
-	// Printing the sorted data.
+       MergeSort(arr, 0, n-1);
+     // Printing the sorted data.
 	cout<<"\nSorted Data ";
 	for (i = 0; i < n; i++)
         cout<<"->"<<arr[i];
- 
-	return 0;
+       return 0;
 }
